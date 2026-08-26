@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Meteo Ultimate Pro</title>
+    <style>
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--color-red-400:oklch(70.4% .191 22.216);--color-orange-400:oklch(75% .183 55.934);--color-amber-200:oklch(92.4% .12 95.746);--color-amber-400:oklch(82.8% .189 84.429);--color-yellow-400:oklch(85.2% .199 91.936);--color-lime-400:oklch(84.1% .238 128.85);--color-green-400:oklch(79.2% .209 151.711);--color-emerald-400:oklch(76.5% .177 163.223);--color-teal-300:oklch(85.5% .138 181.071);--color-cyan-300:oklch(86.5% .127 207.078);--color-cyan-400:oklch(78.9% .154 211.53);--color-cyan-500:oklch(71.5% .143 215.221);--color-cyan-600:oklch(60.9% .126 221.723);--color-sky-300:oklch(82.8% .111 230.318);--color-sky-400:oklch(74.6% .16 232.661);--color-blue-500:oklch(62.3% .214 259.815);--color-indigo-300:oklch(78.5% .115 274.713);--color-purple-400:oklch(71.4% .203 305.504);--color-rose-500:oklch(64.5% .246 16.439);--color-slate-100:oklch(96.8% .007 247.896);--color-slate-300:oklch(86.9% .022 252.894);--color-slate-400:oklch(70.4% .04 256.788);--color-slate-500:oklch(55.4% .046 257.417);--color-slate-600:oklch(44.6% .043 257.281);--color-slate-700:oklch(37.2% .044 257.287);--color-slate-800:oklch(27.9% .041 260.031);--color-slate-900:oklch(20.8% .042 265.755);--color-white:#fff;--spacing:.25rem;--container-7xl:80rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--text-6xl:3.75rem;--text-6xl--line-height:1;--font-weight-normal:400;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--radius-2xl:1rem;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring:where(:not(iframe)){outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.absolute{position:absolute}.relative{position:relative}.top-full{top:100%}.right-0{right:0}.left-0{left:0}.z-10{z-index:10}.-m-1\.5{margin:calc(var(--spacing) * -1.5)}.mx-auto{margin-inline:auto}.my-1{margin-block:var(--spacing)}.my-4{margin-block:calc(var(--spacing) * 4)}.mt-0\.5{margin-top:calc(var(--spacing) * .5)}.mt-1{margin-top:var(--spacing)}.mt-2{margin-top:calc(var(--spacing) * 2)}.mt-4{margin-top:calc(var(--spacing) * 4)}.mb-1{margin-bottom:var(--spacing)}.mb-2{margin-bottom:calc(var(--spacing) * 2)}.mb-3{margin-bottom:calc(var(--spacing) * 3)}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.inline-block{display:inline-block}.inline-flex{display:inline-flex}.h-2{height:calc(var(--spacing) * 2)}.h-24{height:calc(var(--spacing) * 24)}.h-52{height:calc(var(--spacing) * 52)}.max-h-48{max-height:calc(var(--spacing) * 48)}.min-h-screen{min-height:100vh}.w-2{width:calc(var(--spacing) * 2)}.w-full{width:100%}.max-w-7xl{max-width:var(--container-7xl)}.max-w-\[180px\]{max-width:180px}.min-w-0{min-width:0}.min-w-\[140px\]{min-width:140px}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.transform{transform:var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-start{align-items:flex-start}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-1{gap:var(--spacing)}.gap-1\.5{gap:calc(var(--spacing) * 1.5)}.gap-2{gap:calc(var(--spacing) * 2)}.gap-3{gap:calc(var(--spacing) * 3)}.gap-4{gap:calc(var(--spacing) * 4)}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded-2xl{border-radius:var(--radius-2xl)}.rounded-full{border-radius:3.40282e38px}.rounded-lg{border-radius:var(--radius-lg)}.rounded-md{border-radius:var(--radius-md)}.rounded-xl{border-radius:var(--radius-xl)}.border{border-style:var(--tw-border-style);border-width:1px}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.border-dashed{--tw-border-style:dashed;border-style:dashed}.border-slate-600{border-color:var(--color-slate-600)}.border-slate-700{border-color:var(--color-slate-700)}.border-slate-700\/50{border-color:#31415880}@supports (color:color-mix(in lab, red, red)){.border-slate-700\/50{border-color:color-mix(in oklab, var(--color-slate-700) 50%, transparent)}}.bg-cyan-600{background-color:var(--color-cyan-600)}.bg-slate-700{background-color:var(--color-slate-700)}.bg-slate-700\/80{background-color:#314158cc}@supports (color:color-mix(in lab, red, red)){.bg-slate-700\/80{background-color:color-mix(in oklab, var(--color-slate-700) 80%, transparent)}}.bg-slate-800{background-color:var(--color-slate-800)}.bg-slate-900{background-color:var(--color-slate-900)}.bg-slate-900\/60{background-color:#0f172b99}@supports (color:color-mix(in lab, red, red)){.bg-slate-900\/60{background-color:color-mix(in oklab, var(--color-slate-900) 60%, transparent)}}.bg-gradient-to-r{--tw-gradient-position:to right in oklab;background-image:linear-gradient(var(--tw-gradient-stops))}.from-cyan-400{--tw-gradient-from:var(--color-cyan-400);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))}.to-blue-500{--tw-gradient-to:var(--color-blue-500);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-1{padding:var(--spacing)}.p-1\.5{padding:calc(var(--spacing) * 1.5)}.p-2{padding:calc(var(--spacing) * 2)}.p-3{padding:calc(var(--spacing) * 3)}.p-4{padding:calc(var(--spacing) * 4)}.px-2{padding-inline:calc(var(--spacing) * 2)}.px-3{padding-inline:calc(var(--spacing) * 3)}.px-4{padding-inline:calc(var(--spacing) * 4)}.py-1{padding-block:var(--spacing)}.py-1\.5{padding-block:calc(var(--spacing) * 1.5)}.py-2{padding-block:calc(var(--spacing) * 2)}.py-2\.5{padding-block:calc(var(--spacing) * 2.5)}.py-3{padding-block:calc(var(--spacing) * 3)}.pt-2{padding-top:calc(var(--spacing) * 2)}.pt-3{padding-top:calc(var(--spacing) * 3)}.pb-1{padding-bottom:var(--spacing)}.pb-2{padding-bottom:calc(var(--spacing) * 2)}.pb-3{padding-bottom:calc(var(--spacing) * 3)}.text-center{text-align:center}.font-sans{font-family:var(--font-sans)}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading,var(--text-3xl--line-height))}.text-5xl{font-size:var(--text-5xl);line-height:var(--tw-leading,var(--text-5xl--line-height))}.text-base{font-size:var(--text-base);line-height:var(--tw-leading,var(--text-base--line-height))}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading,var(--text-lg--line-height))}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading,var(--text-xs--line-height))}.text-\[10px\]{font-size:10px}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold)}.font-extrabold{--tw-font-weight:var(--font-weight-extrabold);font-weight:var(--font-weight-extrabold)}.font-normal{--tw-font-weight:var(--font-weight-normal);font-weight:var(--font-weight-normal)}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold)}.whitespace-nowrap{white-space:nowrap}.text-amber-200{color:var(--color-amber-200)}.text-amber-400{color:var(--color-amber-400)}.text-cyan-300{color:var(--color-cyan-300)}.text-cyan-400{color:var(--color-cyan-400)}.text-emerald-400{color:var(--color-emerald-400)}.text-green-400{color:var(--color-green-400)}.text-indigo-300{color:var(--color-indigo-300)}.text-lime-400{color:var(--color-lime-400)}.text-orange-400{color:var(--color-orange-400)}.text-purple-400{color:var(--color-purple-400)}.text-red-400{color:var(--color-red-400)}.text-rose-500{color:var(--color-rose-500)}.text-sky-300{color:var(--color-sky-300)}.text-sky-400{color:var(--color-sky-400)}.text-slate-100{color:var(--color-slate-100)}.text-slate-300{color:var(--color-slate-300)}.text-slate-400{color:var(--color-slate-400)}.text-slate-500{color:var(--color-slate-500)}.text-slate-600{color:var(--color-slate-600)}.text-teal-300{color:var(--color-teal-300)}.text-transparent{color:#0000}.text-white{color:var(--color-white)}.text-yellow-400{color:var(--color-yellow-400)}.capitalize{text-transform:capitalize}.italic{font-style:italic}.shadow-md{--tw-shadow:0 4px 6px -1px var(--tw-shadow-color,#0000001a), 0 2px 4px -2px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px var(--tw-shadow-color,#0000001a), 0 8px 10px -6px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.transition{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter,display,content-visibility,overlay,pointer-events;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-colors{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-transform{transition-property:transform,translate,scale,rotate;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.duration-500{--tw-duration:.5s;transition-duration:.5s}.last\:border-none:last-child{--tw-border-style:none;border-style:none}@media (hover:hover){.hover\:border-cyan-500:hover{border-color:var(--color-cyan-500)}.hover\:bg-cyan-500:hover{background-color:var(--color-cyan-500)}.hover\:bg-slate-600:hover{background-color:var(--color-slate-600)}.hover\:bg-slate-700:hover{background-color:var(--color-slate-700)}.hover\:text-cyan-400:hover{color:var(--color-cyan-400)}.hover\:text-rose-500:hover{color:var(--color-rose-500)}.hover\:text-white:hover{color:var(--color-white)}}.focus\:ring-2:focus{--tw-ring-shadow:var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.focus\:ring-cyan-500:focus{--tw-ring-color:var(--color-cyan-500)}.focus\:outline-none:focus{--tw-outline-style:none;outline-style:none}@media (min-width:40rem){.sm\:my-6{margin-block:calc(var(--spacing) * 6)}.sm\:mt-5{margin-top:calc(var(--spacing) * 5)}.sm\:inline{display:inline}.sm\:h-56{height:calc(var(--spacing) * 56)}.sm\:max-w-\[250px\]{max-width:250px}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:gap-6{gap:calc(var(--spacing) * 6)}.sm\:p-3{padding:calc(var(--spacing) * 3)}.sm\:p-6{padding:calc(var(--spacing) * 6)}.sm\:py-2{padding-block:calc(var(--spacing) * 2)}.sm\:text-4xl{font-size:var(--text-4xl);line-height:var(--tw-leading,var(--text-4xl--line-height))}.sm\:text-6xl{font-size:var(--text-6xl);line-height:var(--tw-leading,var(--text-6xl--line-height))}.sm\:text-base{font-size:var(--text-base);line-height:var(--tw-leading,var(--text-base--line-height))}.sm\:text-lg{font-size:var(--text-lg);line-height:var(--tw-leading,var(--text-lg--line-height))}.sm\:text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.sm\:text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.sm\:text-xs{font-size:var(--text-xs);line-height:var(--tw-leading,var(--text-xs--line-height))}}@media (min-width:48rem){.md\:w-64{width:calc(var(--spacing) * 64)}.md\:w-auto{width:auto}.md\:flex-row{flex-direction:row}.md\:items-start{align-items:flex-start}.md\:justify-start{justify-content:flex-start}.md\:text-left{text-align:left}}@media (min-width:64rem){.lg\:col-span-2{grid-column:span 2/span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}}@property --tw-rotate-x{syntax:"*";inherits:false}@property --tw-rotate-y{syntax:"*";inherits:false}@property --tw-rotate-z{syntax:"*";inherits:false}@property --tw-skew-x{syntax:"*";inherits:false}@property --tw-skew-y{syntax:"*";inherits:false}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-gradient-position{syntax:"*";inherits:false}@property --tw-gradient-from{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-via{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-to{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-stops{syntax:"*";inherits:false}@property --tw-gradient-via-stops{syntax:"*";inherits:false}@property --tw-gradient-from-position{syntax:"<length-percentage>";inherits:false;initial-value:0%}@property --tw-gradient-via-position{syntax:"<length-percentage>";inherits:false;initial-value:50%}@property --tw-gradient-to-position{syntax:"<length-percentage>";inherits:false;initial-value:100%}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-duration{syntax:"*";inherits:false}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <!-- PWA: manifest come file reale (manifest.json va pubblicato insieme a questo index.html) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <!-- Icone: iOS/Safari legge apple-touch-icon per "Aggiungi a Home", NON il manifest.json -->
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Meteo Pro">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        #suggestions { z-index: 9999 !important; }
+        /* Ottimizzazioni mobile: elimina il ritardo di ~300ms sul tap dei browser mobile più datati
+           e sostituisce il flash grigio di default con un tocco coerente con il tema scuro. */
+        button, a { touch-action: manipulation; -webkit-tap-highlight-color: rgba(6, 182, 212, 0.15); }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-slate-800 border-b border-slate-700 py-3 px-4 shadow-md relative" style="z-index: 1000;">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="w-full md:w-auto text-center md:text-left flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2">
+                    <h1 id="appTitle" class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                        Dashboard Meteo Ultimate
+                    </h1>
+                    <button id="installBtn" class="hidden text-xs bg-cyan-600 hover:bg-cyan-500 px-2 py-1 rounded-md font-semibold transition" title="Installa PWA">📥 Installa</button>
+                </div>
+                <!-- Barra Preferiti -->
+                <!-- flex-wrap invece di overflow-x-auto: con 10 città preimpostate + il chip "+" per aggiungerne
+                     un'altra, uno scroll orizzontale con scrollbar nascosta lasciava fuori schermo diverse
+                     città senza alcun indizio visivo che ci fosse altro da scorrere. Andando a capo resta
+                     sempre tutto visibile. -->
+                <div id="favoritesBar" class="flex flex-wrap justify-center md:justify-start gap-2 w-full pt-2 pb-1">
+                    <!-- Preferiti caricati dinamicamente -->
+                </div>
+            </div>
+            
+            <!-- flex-wrap: su schermi molto stretti (≤320px) i bottoni vanno a capo invece di schiacciare
+                 il campo di ricerca fino a renderlo inutilizzabile. -->
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto relative">
+                <div class="relative flex-grow md:w-64 min-w-[140px]">
+                    <input type="text" id="cityInput" autocomplete="off" placeholder="Cerca città..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 sm:py-2 text-sm focus:ring-2 focus:ring-cyan-500 focus:outline-none min-w-0">
+                    <!-- Dropdown suggerimenti -->
+                    <div id="suggestions" class="absolute left-0 right-0 top-full mt-1 bg-slate-800 border border-slate-700 rounded-lg shadow-xl hidden max-h-48 overflow-y-auto"></div>
+                </div>
+                <!-- Testo "Cerca" nascosto sotto sm: solo l'icona, per lasciare più spazio al campo di ricerca sui telefoni -->
+                <button id="searchBtn" class="bg-cyan-600 hover:bg-cyan-500 px-3 py-2.5 sm:py-2 rounded-lg text-sm font-semibold transition shrink-0 inline-flex items-center gap-1.5"><span aria-hidden="true">🔍</span><span id="searchBtnLabel" class="hidden sm:inline">Cerca</span></button>
+                <button id="geoBtn" class="bg-slate-700 hover:bg-slate-600 px-3 py-2.5 sm:py-2 rounded-lg text-sm transition shrink-0" title="Usa la mia posizione">📍</button>
+                <button id="unitBtn" class="bg-slate-700 hover:bg-slate-600 px-3 py-2.5 sm:py-2 rounded-lg text-sm font-bold transition shrink-0" title="Cambia unità di misura">°C</button>
+                <button id="langBtn" class="bg-slate-700 hover:bg-slate-600 px-3 py-2.5 sm:py-2 rounded-lg text-sm font-bold transition shrink-0 text-cyan-400" title="Cambia Lingua / Change Language">IT</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hint installazione iOS: beforeinstallprompt non scatta mai su Safari iOS, quindi il pulsante
+         "Installa" resta nascosto lì. Questo banner (mostrato solo su iOS non ancora installato, e
+         chiudibile) spiega la procedura manuale "Aggiungi a Home". -->
+    <div id="iosInstallHint" class="hidden max-w-7xl mx-auto mt-3 px-3 sm:px-6">
+        <div class="bg-slate-800 border border-cyan-500/50 rounded-lg px-4 py-2.5 flex items-center justify-between gap-3 text-xs sm:text-sm">
+            <span id="iosInstallHintText" class="text-slate-200"></span>
+            <button id="iosInstallHintClose" class="text-slate-400 hover:text-white text-lg leading-none shrink-0 p-1 -m-1" title="Chiudi">&times;</button>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto p-3 sm:p-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 relative z-10">
+        <!-- Pannello Informazioni Correnti -->
+        <section class="bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-700 shadow-xl flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-start mb-3 border-b border-slate-700 pb-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 id="cityName" class="text-lg sm:text-xl font-bold text-cyan-400 truncate max-w-[180px] sm:max-w-[250px]" data-i18n="loading">Caricamento...</h2>
+                            <button id="favBtn" class="text-slate-400 hover:text-rose-500 text-xl transition p-1.5 -m-1.5" title="Aggiungi ai preferiti">🤍</button>
+                        </div>
+                        <p id="cityCoords" class="text-xs text-slate-400" data-i18n="detecting">Rilevamento posizione...</p>
+                    </div>
+                    <span id="weatherIcon" class="text-3xl sm:text-4xl">🌤️</span>
+                </div>
+
+                <div class="my-4 sm:my-6 text-center">
+                    <span id="currentTemp" class="text-5xl sm:text-6xl font-extrabold text-white">--°</span>
+                    <p id="apparentTemp" class="text-xs sm:text-sm text-slate-500 mt-1"><span id="lblFeelsLike">Percepita</span>: <span id="currentApparentTemp">--°</span></p>
+                    <p id="weatherDesc" class="text-xs sm:text-sm text-slate-400 mt-2 capitalize" data-i18n="waitingData">In attesa di dati...</p>
+                </div>
+
+                <!-- Griglia Metriche Avanzate -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblHumidity" class="text-[10px] sm:text-xs text-slate-400 block">Umidità</span>
+                        <span id="currentHumidity" class="text-sm sm:text-base font-bold text-cyan-300">--%</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center relative overflow-hidden">
+                        <span id="lblWind" class="text-[10px] sm:text-xs text-slate-400 block">Vento</span>
+                        <div class="flex justify-center items-center gap-1">
+                            <span id="windDirIcon" class="inline-block transition-transform duration-500 text-sky-400 text-sm">↑</span>
+                            <span id="currentWind" class="text-sm sm:text-base font-bold text-sky-300">--</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblPressure" class="text-[10px] sm:text-xs text-slate-400 block">Pressione</span>
+                        <span id="currentPressure" class="text-sm sm:text-base font-bold text-indigo-300">--</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblDew" class="text-[10px] sm:text-xs text-slate-400 block">P. Rugiada</span>
+                        <span id="currentDew" class="text-sm sm:text-base font-bold text-teal-300">--°</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblAqi" class="text-[10px] sm:text-xs text-slate-400 block">Qualità Aria</span>
+                        <span id="currentAqi" class="text-sm sm:text-base font-bold text-emerald-400">--</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblUv" class="text-[10px] sm:text-xs text-slate-400 block">Indice UV</span>
+                        <span id="currentUv" class="text-sm sm:text-base font-bold text-amber-400">--</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblSunrise" class="text-[10px] sm:text-xs text-slate-400 block">Alba</span>
+                        <span id="currentSunrise" class="text-sm sm:text-base font-bold text-amber-200">--:--</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-2 sm:p-3 rounded-xl border border-slate-700/50 text-center">
+                        <span id="lblSunset" class="text-[10px] sm:text-xs text-slate-400 block">Tramonto</span>
+                        <span id="currentSunset" class="text-sm sm:text-base font-bold text-orange-400">--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-700 text-center">
+                <p id="lblProvider" class="text-[10px] sm:text-xs text-slate-500">Dati forniti da Open-Meteo API</p>
+                <p id="lastUpdated" class="text-[10px] sm:text-xs text-slate-600 mt-0.5">&nbsp;</p>
+            </div>
+        </section>
+
+        <!-- Area Grafici e Previsioni -->
+        <section class="lg:col-span-2 bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-700 shadow-xl flex flex-col justify-between">
+            
+            <!-- Grafico con selettore parametro (Feature 2) -->
+            <div>
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-3 border-b border-slate-700 pb-2 gap-2">
+                    <h2 id="lblChartTitle" class="text-base sm:text-lg font-semibold text-cyan-400">Andamento Meteo (Prossime 24 Ore)</h2>
+                    <!-- Selettore vista grafico -->
+                    <div class="flex bg-slate-900 rounded-lg p-1 border border-slate-700 text-xs">
+                        <button id="chartParamTemp" class="px-3 py-1.5 rounded-md bg-cyan-600 text-white font-semibold transition" onclick="switchChartParam('tempHumidity')">🌡️💧 Temp/Umidità</button>
+                        <button id="chartParamRain" class="px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition" onclick="switchChartParam('rain')">🌧️ Pioggia</button>
+                    </div>
+                </div>
+
+                <!-- Temperatura e umidità: due mini-grafici allineati sullo stesso asse tempo invece di un
+                     unico grafico a doppio asse Y (le due scale, °C e %, sono troppo diverse: sovrapporle
+                     su un solo asse creerebbe una correlazione visiva arbitraria e fuorviante). -->
+                <div id="tempHumidityView">
+                    <div class="flex items-center gap-1.5 mb-1">
+                        <span class="inline-block w-2 h-2 rounded-full" style="background:#3987e5"></span>
+                        <span id="lblChartTempSeries" class="text-[10px] text-slate-400">Temperatura</span>
+                    </div>
+                    <div class="relative h-24 w-full">
+                        <canvas id="hourlyChartTemp"></canvas>
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-1 mt-2">
+                        <span class="inline-block w-2 h-2 rounded-full" style="background:#d95926"></span>
+                        <span id="lblChartHumiditySeries" class="text-[10px] text-slate-400">Umidità</span>
+                    </div>
+                    <div class="relative h-24 w-full">
+                        <canvas id="hourlyChartHumidity"></canvas>
+                    </div>
+                </div>
+
+                <div id="rainView" class="hidden relative h-52 sm:h-56 w-full">
+                    <canvas id="hourlyChartRain"></canvas>
+                </div>
+            </div>
+
+            <!-- Previsioni a 4 Giorni (Feature 5) -->
+            <div class="mt-4 sm:mt-5 pt-3 border-t border-slate-700">
+                <h3 id="lblForecastTitle" class="text-xs sm:text-sm font-semibold text-slate-300 mb-2">Previsioni a 4 Giorni</h3>
+                <div id="dailyForecastContainer" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-2">
+                    <!-- Inserito dinamicamente -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Toast non bloccante al posto di alert(): role=status + aria-live annuncia il messaggio agli
+         screen reader senza rubare il focus come farebbe un alert nativo. -->
+    <div id="toast" role="status" aria-live="polite" class="hidden opacity-0 fixed bottom-4 left-1/2 -translate-x-1/2 z-[2000] max-w-[90vw] text-center bg-slate-800 border border-slate-600 text-slate-100 text-sm px-4 py-2.5 rounded-lg shadow-xl transition-opacity duration-300"></div>
+
+    <script>
+        // --- Registrazione Service Worker (richiede hosting reale, es. GitHub Pages: non funziona
+        // aprendo il file localmente con file://, ma fallisce in silenzio grazie al .catch) ---
+        // manifest.json e service-worker.js vanno pubblicati nella stessa cartella di questo index.html.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .catch(err => console.log('Registrazione Service Worker non riuscita (normale se aperto da file locale):', err));
+            });
+        }
+
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBtn').classList.remove('hidden');
+        });
+
+        document.getElementById('installBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('installBtn').classList.add('hidden');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        // --- Variabili di stato ---
+        let tempChart = null;
+        let humidityChart = null;
+        let rainChart = null;
+        let currentWeatherData = null;
+        let currentCityName = "";
+        let currentLat = 0;
+        let currentLon = 0;
+        let isCelsius = true;
+        let currentLang = 'it';
+        let activeChartParam = 'tempHumidity'; // 'tempHumidity', 'rain'
+        let lastUpdatedAt = null; // timestamp (ms) dell'ultimo dato ricevuto (fresco o da cache)
+
+        // Città preimpostate come preferiti al primo avvio (coordinate reali, non richiedono rete).
+        // L'utente può comunque rimuoverle o aggiungerne altre come qualsiasi altro preferito.
+        const PRESET_CITIES = [
+            { name: "Palermo", lat: 38.1157, lon: 13.3613 },
+            { name: "Segesta", lat: 37.9414, lon: 12.8322 },
+            { name: "Mazara del Vallo", lat: 37.6489, lon: 12.5895 },
+            { name: "Agrigento", lat: 37.3111, lon: 13.5765 },
+            { name: "Piazza Armerina", lat: 37.3838, lon: 14.3676 },
+            { name: "Ragusa", lat: 36.9269, lon: 14.7253 },
+            { name: "Siracusa", lat: 37.0755, lon: 15.2866 },
+            { name: "Catania", lat: 37.5079, lon: 15.0830 },
+            { name: "Taormina", lat: 37.8522, lon: 15.2883 },
+            { name: "Milo", lat: 37.7243, lon: 15.1169 }
+        ];
+        // Un posto in più oltre alle 10 preimpostate, per la "città d'origine" personale dell'utente.
+        const MAX_FAVORITES = PRESET_CITIES.length + 1;
+
+        // v9: elenco città preimpostate aggiornato (da 6 a 10) — chiave diversa dalla v8 così chi aveva
+        // già aperto una versione precedente del file riceve la lista nuova invece di restare bloccato
+        // sui 6 preferiti già salvati nel proprio browser.
+        // --- Accesso storage difensivo ---
+        // In modalità privata (o con storage disabilitato) alcuni browser lanciano un'eccezione
+        // su get/set: senza questi wrapper una singola eccezione bloccava l'intero script all'avvio
+        // (schermata bianca). Qui in caso di errore si degrada silenziosamente invece di rompersi.
+        function safeLocalGet(key) {
+            try { return localStorage.getItem(key); } catch (e) { console.warn('localStorage non leggibile', e); return null; }
+        }
+        function safeLocalSet(key, value) {
+            try { localStorage.setItem(key, value); } catch (e) { console.warn('localStorage non scrivibile', e); }
+        }
+        function safeSessionGet(key) {
+            try { return sessionStorage.getItem(key); } catch (e) { return null; }
+        }
+        function safeSessionSet(key, value) {
+            try { sessionStorage.setItem(key, value); } catch (e) { console.warn('sessionStorage non scrivibile', e); }
+        }
+        function safeSessionRemove(key) {
+            try { sessionStorage.removeItem(key); } catch (e) { /* ignora */ }
+        }
+
+        const FAVORITES_STORAGE_KEY = 'weather_favs_v9';
+        // Lettura preferiti protetta: se il valore salvato è corrotto (JSON non valido) o lo storage
+        // non è accessibile, si riparte dai preferiti predefiniti invece di lanciare un'eccezione.
+        let favorites = null;
+        try {
+            favorites = JSON.parse(safeLocalGet(FAVORITES_STORAGE_KEY));
+        } catch (e) {
+            console.warn('Preferiti salvati corrotti: ripristino i predefiniti.', e);
+            favorites = null;
+        }
+        if (!favorites) {
+            favorites = PRESET_CITIES.map(c => ({ ...c }));
+            safeLocalSet(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+        }
+
+        // --- Dizionario Traduzioni ---
+        const i18n = {
+            it: {
+                appTitle: "Dashboard Meteo Ultimate",
+                searchPlaceholder: "Cerca città...",
+                searchBtn: "Cerca",
+                loading: "Caricamento...",
+                detecting: "Rilevamento posizione...",
+                waitingData: "In attesa di dati...",
+                humidity: "Umidità",
+                wind: "Vento",
+                pressure: "Pressione",
+                dew: "P. Rugiada",
+                aqi: "Qualità Aria",
+                uv: "Indice UV",
+                sunrise: "Alba",
+                sunset: "Tramonto",
+                provider: "Dati forniti da Open-Meteo API",
+                feelsLike: "Percepita",
+                updatedAt: "Aggiornato alle",
+                yourLocation: "La tua posizione",
+                ariaSearch: "Cerca città",
+                ariaGeo: "Usa la mia posizione",
+                ariaUnit: "Cambia unità di misura",
+                ariaLang: "Cambia lingua",
+                ariaInstall: "Installa l'app",
+                installBtnLabel: "Installa",
+                ariaFavAdd: "Aggiungi ai preferiti",
+                ariaFavRemove: "Rimuovi dai preferiti",
+                iosInstallHint: "Per installare l'app: tocca Condividi, poi «Aggiungi alla schermata Home».",
+                aqiLevels: { good: "Buona", fair: "Discreta", moderate: "Moderata", poor: "Scarsa", veryPoor: "Molto scarsa", extreme: "Estrema" },
+                uvLevels: { low: "Basso", moderate: "Moderato", high: "Alto", veryHigh: "Molto alto", extreme: "Estremo" },
+                temperature: "Temperatura",
+                chartBtnTempHumidity: "Temp/Umidità",
+                chartBtnRain: "Pioggia",
+                chartTitle: "Andamento Meteo (Prossime 24 Ore)",
+                forecastTitle: "Previsioni a 4 Giorni",
+                favFull: "Hai raggiunto il massimo di {max} città salvate. Rimuovine una per aggiungerne un'altra.",
+                emptyFav: "Nessuna città preferita salvata.",
+                addOriginCity: "Aggiungi la tua città",
+                cityNotFound: "Città non trovata.",
+                errorApi: "Impossibile recuperare i dati meteo. Verifica la connessione.",
+                weather: {
+                    0: "Sereno", 1: "Principalmente sereno", 2: "Parzialmente nuvoloso", 3: "Coperto",
+                    45: "Nebbia", 48: "Nebbia con brina", 51: "Pioviggine leggera", 53: "Pioviggine moderata", 55: "Pioviggine intensa",
+                    56: "Pioviggine gelata leggera", 57: "Pioviggine gelata intensa",
+                    61: "Pioggia debole", 63: "Pioggia moderata", 65: "Pioggia forte",
+                    66: "Pioggia gelata leggera", 67: "Pioggia gelata forte",
+                    71: "Neve debole", 73: "Neve moderata", 75: "Neve forte", 77: "Granelli di neve",
+                    80: "Rovesci deboli", 81: "Rovesci moderati", 82: "Rovesci violenti",
+                    85: "Rovesci di neve deboli", 86: "Rovesci di neve forti",
+                    95: "Temporale", 96: "Temporale con grandine debole", 99: "Temporale con grandine forte",
+                    def: "Variabile"
+                }
+            },
+            en: {
+                appTitle: "Ultimate Weather Dashboard",
+                searchPlaceholder: "Search city...",
+                searchBtn: "Search",
+                loading: "Loading...",
+                detecting: "Detecting location...",
+                waitingData: "Waiting for data...",
+                humidity: "Humidity",
+                wind: "Wind",
+                pressure: "Pressure",
+                dew: "Dew Point",
+                aqi: "Air Quality",
+                uv: "UV Index",
+                sunrise: "Sunrise",
+                sunset: "Sunset",
+                provider: "Data provided by Open-Meteo API",
+                feelsLike: "Feels like",
+                updatedAt: "Updated at",
+                yourLocation: "Your Location",
+                ariaSearch: "Search city",
+                ariaGeo: "Use my location",
+                ariaUnit: "Change units",
+                ariaLang: "Change language",
+                ariaInstall: "Install the app",
+                installBtnLabel: "Install",
+                ariaFavAdd: "Add to favorites",
+                ariaFavRemove: "Remove from favorites",
+                iosInstallHint: "To install: tap Share, then \u201CAdd to Home Screen\u201D.",
+                aqiLevels: { good: "Good", fair: "Fair", moderate: "Moderate", poor: "Poor", veryPoor: "Very Poor", extreme: "Extreme" },
+                uvLevels: { low: "Low", moderate: "Moderate", high: "High", veryHigh: "Very High", extreme: "Extreme" },
+                temperature: "Temperature",
+                chartBtnTempHumidity: "Temp/Humidity",
+                chartBtnRain: "Rain",
+                chartTitle: "Weather Trend (Next 24 Hours)",
+                forecastTitle: "4-Day Forecast",
+                favFull: "You've reached the maximum of {max} saved cities. Remove one to add another.",
+                emptyFav: "No favorite cities saved.",
+                addOriginCity: "Add your city",
+                cityNotFound: "City not found.",
+                errorApi: "Unable to fetch weather data. Check your connection.",
+                weather: {
+                    0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast",
+                    45: "Fog", 48: "Rime fog", 51: "Light drizzle", 53: "Moderate drizzle", 55: "Dense drizzle",
+                    56: "Light freezing drizzle", 57: "Dense freezing drizzle",
+                    61: "Slight rain", 63: "Moderate rain", 65: "Heavy rain",
+                    66: "Light freezing rain", 67: "Heavy freezing rain",
+                    71: "Slight snow", 73: "Moderate snow", 75: "Heavy snow", 77: "Snow grains",
+                    80: "Slight rain showers", 81: "Moderate rain showers", 82: "Violent rain showers",
+                    85: "Slight snow showers", 86: "Heavy snow showers",
+                    95: "Thunderstorm", 96: "Thunderstorm with slight hail", 99: "Thunderstorm with heavy hail",
+                    def: "Variable"
+                }
+            }
+        };
+
+        window.onload = () => {
+            applyTranslations();
+            renderFavorites();
+            initLocation();
+        };
+
+        function applyTranslations() {
+            const t = i18n[currentLang];
+            document.getElementById('appTitle').textContent = t.appTitle;
+            document.getElementById('cityInput').placeholder = t.searchPlaceholder;
+            document.getElementById('searchBtnLabel').textContent = t.searchBtn;
+            document.getElementById('lblHumidity').textContent = t.humidity;
+            document.getElementById('lblWind').textContent = t.wind;
+            document.getElementById('lblPressure').textContent = t.pressure;
+            document.getElementById('lblDew').textContent = t.dew;
+            document.getElementById('lblAqi').textContent = t.aqi;
+            document.getElementById('lblUv').textContent = t.uv;
+            document.getElementById('lblSunrise').textContent = t.sunrise;
+            document.getElementById('lblSunset').textContent = t.sunset;
+            document.getElementById('lblProvider').textContent = t.provider;
+            document.getElementById('lblFeelsLike').textContent = t.feelsLike;
+            document.getElementById('lblChartTitle').textContent = t.chartTitle;
+            document.getElementById('lblForecastTitle').textContent = t.forecastTitle;
+            document.getElementById('chartParamTemp').textContent = `🌡️💧 ${t.chartBtnTempHumidity}`;
+            document.getElementById('chartParamRain').textContent = `🌧️ ${t.chartBtnRain}`;
+            document.getElementById('lblChartTempSeries').textContent = t.temperature;
+            document.getElementById('lblChartHumiditySeries').textContent = t.humidity;
+
+            if (!currentWeatherData) {
+                document.getElementById('cityName').textContent = t.loading;
+                document.getElementById('cityCoords').textContent = t.detecting;
+                document.getElementById('weatherDesc').textContent = t.waitingData;
+            }
+
+            document.getElementById('langBtn').textContent = currentLang.toUpperCase();
+
+            // Aggiorna l'attributo lang del documento: aiuta screen reader e sillabazione a
+            // interpretare correttamente la lingua dei contenuti dopo il cambio IT/EN.
+            document.documentElement.lang = currentLang;
+
+            // aria-label sui controlli (molti sono icona-only o mostrano solo un simbolo)
+            document.getElementById('searchBtn').setAttribute('aria-label', t.ariaSearch);
+            document.getElementById('geoBtn').setAttribute('aria-label', t.ariaGeo);
+            document.getElementById('unitBtn').setAttribute('aria-label', t.ariaUnit);
+            document.getElementById('langBtn').setAttribute('aria-label', t.ariaLang);
+            const installBtn = document.getElementById('installBtn');
+            installBtn.textContent = `📥 ${t.installBtnLabel}`;
+            installBtn.setAttribute('title', t.ariaInstall);
+            installBtn.setAttribute('aria-label', t.ariaInstall);
+
+            // Aggiorna testo hint iOS e label preferiti nella lingua corrente
+            document.getElementById('iosInstallHintText').textContent = t.iosInstallHint;
+            if (currentWeatherData) checkFavoriteStatus();
+        }
+
+        const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minuti: oltre questo tempo i dati cache sono considerati scaduti
+
+        async function fetchWeatherData(lat, lon, name) {
+            // Precisione a 4 decimali (~11 m) invece di 2 (~1 km) per evitare che due
+            // località vicine ma distinte condividano la stessa chiave di cache.
+            const cacheKey = `meteo_v7_${lat.toFixed(4)}_${lon.toFixed(4)}`;
+            const cachedRaw = safeSessionGet(cacheKey);
+
+            if (cachedRaw) {
+                try {
+                    const cachedEntry = JSON.parse(cachedRaw);
+                    const isFresh = cachedEntry.fetchedAt && (Date.now() - cachedEntry.fetchedAt) < CACHE_TTL_MS;
+                    if (isFresh) {
+                        processWeatherData(cachedEntry.data, name, lat, lon, cachedEntry.fetchedAt);
+                        return;
+                    }
+                } catch (e) {
+                    // voce di cache corrotta: la rimuoviamo e proseguiamo con la rete
+                    console.warn('Cache meteo corrotta, la ignoro.', e);
+                }
+                safeSessionRemove(cacheKey);
+            }
+
+            try {
+                // Feature 2 & 5: Aggiunto hourly precipitation e daily esteso a 7 giorni (temperature_2m_max, temperature_2m_min, precipitation_sum)
+                // forecast_days=4: la UI mostra solo 4 giorni, niente motivo di scaricare gli altri 3
+                const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&forecast_days=4&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m,wind_direction_10m,surface_pressure,dew_point_2m,uv_index&hourly=temperature_2m,relative_humidity_2m,precipitation,precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_probability_max&timezone=auto`);
+                const data = await response.json();
+
+                // Open-Meteo può rispondere con HTTP 400 e un body { error: true, reason: "..." }
+                // anche quando il JSON è valido: senza questo controllo l'app proseguirebbe
+                // con un oggetto privo di "current"/"hourly"/"daily" e andrebbe in errore più avanti.
+                if (!response.ok || data.error) {
+                    throw new Error(data.reason || `HTTP ${response.status}`);
+                }
+
+                try {
+                    const airResponse = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=european_aqi`);
+                    if(airResponse.ok) {
+                        const airData = await airResponse.json();
+                        if (airData.current && airData.current.european_aqi !== undefined) {
+                            data.current.european_aqi = airData.current.european_aqi;
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Impossibile recuperare dati qualità aria", e);
+                }
+
+                const fetchedAt = Date.now();
+                safeSessionSet(cacheKey, JSON.stringify({ data: data, fetchedAt: fetchedAt }));
+                processWeatherData(data, name, lat, lon, fetchedAt);
+            } catch (error) {
+                console.error("Errore nel recupero dei dati meteo:", error);
+                showToast(i18n[currentLang].errorApi, 'error');
+            }
+        }
+
+        function processWeatherData(data, name, lat, lon, fetchedAt) {
+            currentWeatherData = data;
+            currentCityName = name;
+            currentLat = lat;
+            currentLon = lon;
+            lastUpdatedAt = fetchedAt || Date.now();
+            updateUI();
+            checkFavoriteStatus();
+        }
+
+        function convertTemp(val) {
+            if (isCelsius) return val;
+            return (val * 9/5) + 32;
+        }
+
+        function updateUI() {
+            if (!currentWeatherData) return;
+
+            document.getElementById('cityName').textContent = currentCityName;
+            document.getElementById('cityCoords').textContent = `Lat: ${currentLat.toFixed(2)}, Lon: ${currentLon.toFixed(2)}`;
+            
+            const current = currentWeatherData.current;
+            const tempVal = convertTemp(current.temperature_2m);
+            const dewVal = convertTemp(current.dew_point_2m);
+            const unitSymbol = isCelsius ? '°C' : '°F';
+            const windUnit = isCelsius ? 'km/h' : 'mph';
+            const windSpeed = isCelsius ? current.wind_speed_10m : (current.wind_speed_10m * 0.621371);
+
+            document.getElementById('currentTemp').textContent = `${Math.round(tempVal)}${unitSymbol}`;
+            if (current.apparent_temperature !== undefined) {
+                document.getElementById('currentApparentTemp').textContent = `${Math.round(convertTemp(current.apparent_temperature))}${unitSymbol}`;
+            } else {
+                document.getElementById('currentApparentTemp').textContent = '--°';
+            }
+            document.getElementById('currentHumidity').textContent = `${current.relative_humidity_2m}%`;
+            document.getElementById('currentWind').textContent = `${Math.round(windSpeed)} ${windUnit}`;
+
+            document.getElementById('currentPressure').textContent = `${Math.round(current.surface_pressure)} hPa`;
+            document.getElementById('currentDew').textContent = `${Math.round(dewVal)}${unitSymbol}`;
+
+            const windIcon = document.getElementById('windDirIcon');
+            windIcon.style.transform = `rotate(${current.wind_direction_10m}deg)`;
+
+            const aqiEl = document.getElementById('currentAqi');
+            if (current.european_aqi !== undefined) {
+                const aqiInfo = getAqiInfo(current.european_aqi);
+                aqiEl.textContent = `${current.european_aqi} · ${aqiInfo.label}`;
+                aqiEl.className = `text-sm sm:text-base font-bold ${aqiInfo.colorClass}`;
+            } else {
+                aqiEl.textContent = "N/A";
+                aqiEl.className = "text-sm sm:text-base font-bold text-slate-400";
+            }
+
+            const uvEl = document.getElementById('currentUv');
+            if (current.uv_index !== undefined) {
+                const uvInfo = getUvInfo(current.uv_index);
+                uvEl.textContent = `${current.uv_index} · ${uvInfo.label}`;
+                uvEl.className = `text-sm sm:text-base font-bold ${uvInfo.colorClass}`;
+            } else {
+                uvEl.textContent = "N/A";
+                uvEl.className = "text-sm sm:text-base font-bold text-slate-400";
+            }
+
+            const localeStr = currentLang === 'it' ? 'it-IT' : 'en-US';
+            const daily = currentWeatherData.daily;
+            if (daily.sunrise && daily.sunrise[0]) {
+                const sunriseDate = new Date(daily.sunrise[0]);
+                document.getElementById('currentSunrise').textContent = sunriseDate.toLocaleTimeString(localeStr, { hour: '2-digit', minute: '2-digit' });
+            }
+            if (daily.sunset && daily.sunset[0]) {
+                const sunsetDate = new Date(daily.sunset[0]);
+                document.getElementById('currentSunset').textContent = sunsetDate.toLocaleTimeString(localeStr, { hour: '2-digit', minute: '2-digit' });
+            }
+
+            const isDay = current.is_day === undefined ? true : !!current.is_day;
+            const weatherInfo = getWeatherInfo(current.weather_code, isDay);
+            document.getElementById('weatherDesc').textContent = weatherInfo.text;
+            document.getElementById('weatherIcon').textContent = weatherInfo.icon;
+
+            if (lastUpdatedAt) {
+                const updatedStr = new Date(lastUpdatedAt).toLocaleTimeString(localeStr, { hour: '2-digit', minute: '2-digit' });
+                document.getElementById('lastUpdated').textContent = `${i18n[currentLang].updatedAt} ${updatedStr}`;
+            }
+
+            renderChart();
+
+            // Feature 5: Rendering previsioni a 4 giorni
+            const dailyContainer = document.getElementById('dailyForecastContainer');
+            dailyContainer.innerHTML = '';
+
+            for (let i = 0; i < 4; i++) {
+                if(!daily.time[i]) break;
+                const dateStr = new Date(daily.time[i]).toLocaleDateString(localeStr, { weekday: 'short', day: 'numeric', month: 'short' });
+                const info = getWeatherInfo(daily.weather_code[i]);
+                const maxT = Math.round(convertTemp(daily.temperature_2m_max[i]));
+                const minT = Math.round(convertTemp(daily.temperature_2m_min[i]));
+                const rainSum = daily.precipitation_sum ? daily.precipitation_sum[i] : 0;
+                const rainProb = daily.precipitation_probability_max ? daily.precipitation_probability_max[i] : null;
+                const rainProbStr = (rainProb !== null && rainProb !== undefined) ? ` · ${rainProb}%` : '';
+
+                const card = document.createElement('div');
+                card.className = "bg-slate-900/60 p-2 rounded-xl border border-slate-700/50 text-center flex flex-col justify-between";
+                card.innerHTML = `
+                    <span class="text-[10px] text-slate-400 block">${dateStr}</span>
+                    <span class="text-xl my-1 block">${info.icon}</span>
+                    <span class="text-xs font-bold text-white">${maxT}${unitSymbol} / <span class="text-slate-400 font-normal">${minT}${unitSymbol}</span></span>
+                    <span class="text-[10px] text-sky-400 mt-1 block">🌧️ ${rainSum} mm${rainProbStr}</span>
+                `;
+                dailyContainer.appendChild(card);
+            }
+        }
+
+        // --- Feature 2: Gestione e aggiornamento Grafico Multi-parametro ---
+        // Mappa esplicita param -> id bottone (evita di derivare l'id per concatenazione di stringhe,
+        // fragile in caso di refactor futuri dei nomi).
+        const CHART_PARAM_BTN_IDS = {
+            tempHumidity: 'chartParamTemp',
+            rain: 'chartParamRain'
+        };
+
+        function switchChartParam(param) {
+            activeChartParam = param;
+
+            // Aggiorna classi bottoni
+            Object.keys(CHART_PARAM_BTN_IDS).forEach(p => {
+                const btn = document.getElementById(CHART_PARAM_BTN_IDS[p]);
+                if (!btn) return;
+                if (p === param) {
+                    btn.className = "px-3 py-1.5 rounded-md bg-cyan-600 text-white font-semibold transition";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition";
+                }
+            });
+
+            // Mostra la coppia di mini-grafici temperatura/umidità oppure il grafico pioggia, mai insieme
+            document.getElementById('tempHumidityView').classList.toggle('hidden', param !== 'tempHumidity');
+            document.getElementById('rainView').classList.toggle('hidden', param !== 'rain');
+
+            renderChart();
+        }
+
+        function renderChart() {
+            if (!currentWeatherData) return;
+            const hourly = currentWeatherData.hourly;
+            const current = currentWeatherData.current;
+            const localeStr = currentLang === 'it' ? 'it-IT' : 'en-US';
+
+            const currentTimeIso = current.time.substring(0, 14) + "00";
+            let startIndex = hourly.time.findIndex(t => t >= currentTimeIso);
+            if (startIndex === -1) startIndex = 0;
+            if (startIndex > hourly.time.length - 24) startIndex = hourly.time.length - 24;
+
+            const labels = hourly.time.slice(startIndex, startIndex + 24).map(t => {
+                const dateObj = new Date(t);
+                return dateObj.toLocaleTimeString(localeStr, { hour: 'numeric', minute: '2-digit' });
+            });
+
+            if (activeChartParam === 'tempHumidity') {
+                // Temperatura e umidità hanno scale molto diverse (°C vs %): metterle sullo stesso asse Y
+                // (grafico a doppio asse) creerebbe una correlazione visiva arbitraria e fuorviante.
+                // Le mostriamo invece come due mini-grafici allineati sullo stesso asse tempo, ciascuno
+                // con la propria scala e un colore diverso, così restano leggibili "insieme" senza mentire.
+                const unitSymbol = isCelsius ? '°C' : '°F';
+                const tempData = hourly.temperature_2m.slice(startIndex, startIndex + 24).map(t => convertTemp(t));
+                const humidityData = hourly.relative_humidity_2m.slice(startIndex, startIndex + 24);
+                const tempLabel = currentLang === 'it' ? 'Temperatura' : 'Temperature';
+                const humidityLabel = currentLang === 'it' ? 'Umidità' : 'Humidity';
+
+                const tempCtx = document.getElementById('hourlyChartTemp').getContext('2d');
+                if (tempChart) { tempChart.destroy(); }
+                tempChart = new Chart(tempCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: `${tempLabel} [${unitSymbol}]`,
+                            data: tempData,
+                            borderColor: "#3987e5",
+                            backgroundColor: "rgba(57, 135, 229, 0.12)",
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                            // Nessuna etichetta sull'asse x del grafico superiore: le ore sono già indicate
+                            // sotto, nel grafico dell'umidità, essendo i due grafici allineati sullo stesso asse tempo.
+                            x: { grid: { display: false }, ticks: { display: false } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+
+                const humidityCtx = document.getElementById('hourlyChartHumidity').getContext('2d');
+                if (humidityChart) { humidityChart.destroy(); }
+                humidityChart = new Chart(humidityCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: `${humidityLabel} [%]`,
+                            data: humidityData,
+                            borderColor: "#d95926",
+                            backgroundColor: "rgba(217, 89, 38, 0.12)",
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                            x: { grid: { display: false }, ticks: { color: '#94a3b8', maxTicksLimit: 5, font: { size: 10 } } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            } else if (activeChartParam === 'rain') {
+                const rainData = hourly.precipitation ? hourly.precipitation.slice(startIndex, startIndex + 24) : [];
+                const rainProbData = hourly.precipitation_probability ? hourly.precipitation_probability.slice(startIndex, startIndex + 24) : null;
+                const rainLabel = currentLang === 'it' ? 'Precipitazioni' : 'Precipitation';
+
+                const rainCtx = document.getElementById('hourlyChartRain').getContext('2d');
+                if (rainChart) { rainChart.destroy(); }
+                rainChart = new Chart(rainCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: `${rainLabel} [mm]`,
+                            data: rainData,
+                            borderColor: "#818cf8",
+                            backgroundColor: "rgba(129, 140, 248, 0.1)",
+                            borderWidth: 2.5,
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                            x: { grid: { display: false }, ticks: { color: '#94a3b8', maxTicksLimit: 5, font: { size: 10 } } }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: rainProbData ? {
+                                callbacks: {
+                                    // Aggiunge la probabilità di precipitazione (%) accanto ai mm previsti:
+                                    // un valore più utile del solo quantitativo per decidere se serve l'ombrello.
+                                    afterLabel: (ctx) => {
+                                        const prob = rainProbData[ctx.dataIndex];
+                                        if (prob === undefined || prob === null) return '';
+                                        const probLabel = currentLang === 'it' ? 'Probabilità' : 'Probability';
+                                        return `${probLabel}: ${prob}%`;
+                                    }
+                                }
+                            } : {}
+                        }
+                    }
+                });
+            }
+        }
+
+        // --- Gestione Preferiti ---
+        function checkFavoriteStatus() {
+            const favBtn = document.getElementById('favBtn');
+            const isFav = favorites.some(f => sameLocation(f, { lat: currentLat, lon: currentLon }));
+            if (isFav) {
+                favBtn.textContent = '❤️';
+                favBtn.classList.add('text-rose-500');
+                favBtn.classList.remove('text-slate-400');
+            } else {
+                favBtn.textContent = '🤍';
+                favBtn.classList.remove('text-rose-500');
+                favBtn.classList.add('text-slate-400');
+            }
+            // Stato + etichetta per screen reader (il pulsante è solo emoji)
+            favBtn.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+            favBtn.setAttribute('aria-label', isFav ? i18n[currentLang].ariaFavRemove : i18n[currentLang].ariaFavAdd);
+        }
+
+        // Confronto per coordinate (tolleranza ~1 km) invece che per nome: evita sia le collisioni
+        // tra città omonime, sia il caso in cui il reverse geocoding risolve un nome diverso da
+        // quello con cui era stata fatta la fetch (es. dopo "La tua posizione").
+        function sameLocation(a, b) {
+            return Math.abs(a.lat - b.lat) < 0.01 && Math.abs(a.lon - b.lon) < 0.01;
+        }
+
+        document.getElementById('favBtn').addEventListener('click', () => {
+            const here = { lat: currentLat, lon: currentLon };
+            const index = favorites.findIndex(f => sameLocation(f, here));
+            if (index > -1) {
+                favorites.splice(index, 1); 
+            } else {
+                if (favorites.length >= MAX_FAVORITES) {
+                    showToast(i18n[currentLang].favFull.replace('{max}', MAX_FAVORITES), 'error');
+                    return;
+                }
+                favorites.push({ name: currentCityName, lat: currentLat, lon: currentLon });
+            }
+            safeLocalSet(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+            checkFavoriteStatus();
+            renderFavorites();
+        });
+
+        function renderFavorites() {
+            const bar = document.getElementById('favoritesBar');
+            bar.innerHTML = '';
+            
+            if (favorites.length === 0) {
+                const empty = document.createElement('span');
+                empty.className = "text-xs text-slate-500 italic px-2 shrink-0";
+                empty.textContent = i18n[currentLang].emptyFav;
+                bar.appendChild(empty);
+                // niente "return" qui sotto: anche a lista vuota va comunque mostrato il chip "+"
+            }
+
+            favorites.forEach(fav => {
+                const btn = document.createElement('button');
+                // py-1.5 invece di py-1: target di tocco più comodo su mobile (~36px con line-height incluso).
+                // shrink-0: senza, flexbox comprimerebbe i chip invece di far scorrere la barra orizzontalmente.
+                btn.className = "bg-slate-700/80 hover:bg-slate-600 border border-slate-600 text-xs px-3 py-1.5 rounded-full whitespace-nowrap transition-colors shrink-0";
+                const shortName = fav.name.split(',')[0];
+                btn.textContent = `⭐ ${shortName}`;
+                btn.onclick = () => {
+                    document.getElementById('suggestions').classList.add('hidden');
+                    fetchWeatherData(fav.lat, fav.lon, fav.name);
+                };
+                bar.appendChild(btn);
+            });
+
+            // Finché c'è ancora posto (la città d'origine dell'utente), un chip invita a cercarla e salvarla.
+            if (favorites.length < MAX_FAVORITES) {
+                const addChip = document.createElement('button');
+                addChip.id = 'addOriginChip';
+                addChip.className = "border border-dashed border-slate-600 text-slate-400 hover:text-cyan-400 hover:border-cyan-500 text-xs px-3 py-1.5 rounded-full whitespace-nowrap transition-colors shrink-0";
+                addChip.textContent = `+ ${i18n[currentLang].addOriginCity}`;
+                addChip.onclick = () => {
+                    const input = document.getElementById('cityInput');
+                    input.focus();
+                    input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                };
+                bar.appendChild(addChip);
+            }
+        }
+
+        let autocompleteRequestId = 0; // evita che una risposta arrivata in ritardo sovrascriva suggerimenti più recenti
+
+        async function searchCityAutocomplete(query) {
+            const suggestionsBox = document.getElementById('suggestions');
+            if (query.length < 2) {
+                suggestionsBox.classList.add('hidden');
+                return;
+            }
+
+            const requestId = ++autocompleteRequestId;
+
+            try {
+                const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=${currentLang}&format=json`);
+                const data = await response.json();
+
+                if (requestId !== autocompleteRequestId) return; // arrivata una richiesta più recente nel frattempo
+
+                suggestionsBox.innerHTML = '';
+                if (data.results && data.results.length > 0) {
+                    data.results.forEach(city => {
+                        const item = document.createElement('div');
+                        item.className = "px-3 py-2 text-sm hover:bg-slate-700 cursor-pointer border-b border-slate-700/50 last:border-none";
+                        item.textContent = `${city.name} (${city.country || ''}) - ${city.admin1 || ''}`;
+                        item.addEventListener('click', () => {
+                            document.getElementById('cityInput').value = city.name;
+                            suggestionsBox.classList.add('hidden');
+                            fetchWeatherData(city.latitude, city.longitude, `${city.name}, ${city.country || ''}`);
+                        });
+                        suggestionsBox.appendChild(item);
+                    });
+                    suggestionsBox.classList.remove('hidden');
+                } else {
+                    suggestionsBox.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error("Errore autocompletamento:", error);
+            }
+        }
+
+        async function searchCity(query) {
+            try {
+                const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=1&language=${currentLang}&format=json`);
+                const data = await response.json();
+                if (data.results && data.results.length > 0) {
+                    const city = data.results[0];
+                    fetchWeatherData(city.latitude, city.longitude, `${city.name}, ${city.country || ''}`);
+                } else {
+                    showToast(i18n[currentLang].cityNotFound, 'error');
+                }
+            } catch (error) {
+                // Prima un fallimento di rete qui restava silenzioso (solo console): ora l'utente
+                // riceve un riscontro, coerente con la gestione errori del resto dell'app.
+                console.error("Errore nella ricerca:", error);
+                showToast(i18n[currentLang].errorApi, 'error');
+            }
+        }
+
+        // Icone notturne per i codici che hanno un chiaro equivalente (cielo sereno/poco nuvoloso).
+        // Per nebbia, pioggia, neve e temporali l'icona resta la stessa di giorno: non esiste
+        // una variante "notturna" comunemente riconoscibile e la resa non cambierebbe la comprensione.
+        const NIGHT_ICONS = { 0: "🌙", 1: "🌙", 2: "☁️" };
+
+        function getWeatherInfo(code, isDay = true) {
+            const weatherTexts = i18n[currentLang].weather;
+            // Copertura completa dei codici WMO restituiti da Open-Meteo
+            // (https://open-meteo.com/en/docs -> WMO Weather interpretation codes)
+            const codes = {
+                0: { text: weatherTexts[0], icon: "☀️" },
+                1: { text: weatherTexts[1], icon: "🌤️" },
+                2: { text: weatherTexts[2], icon: "⛅" },
+                3: { text: weatherTexts[3], icon: "☁️" },
+                45: { text: weatherTexts[45], icon: "🌫️" },
+                48: { text: weatherTexts[48], icon: "🌫️" },
+                51: { text: weatherTexts[51], icon: "🌦️" },
+                53: { text: weatherTexts[53], icon: "🌦️" },
+                55: { text: weatherTexts[55], icon: "🌧️" },
+                56: { text: weatherTexts[56], icon: "🌧️" },
+                57: { text: weatherTexts[57], icon: "🌧️" },
+                61: { text: weatherTexts[61], icon: "🌧️" },
+                63: { text: weatherTexts[63], icon: "🌧️" },
+                65: { text: weatherTexts[65], icon: "🌧️" },
+                66: { text: weatherTexts[66], icon: "🌧️" },
+                67: { text: weatherTexts[67], icon: "🌧️" },
+                71: { text: weatherTexts[71], icon: "🌨️" },
+                73: { text: weatherTexts[73], icon: "🌨️" },
+                75: { text: weatherTexts[75], icon: "❄️" },
+                77: { text: weatherTexts[77], icon: "❄️" },
+                80: { text: weatherTexts[80], icon: "🌦️" },
+                81: { text: weatherTexts[81], icon: "🌧️" },
+                82: { text: weatherTexts[82], icon: "⛈️" },
+                85: { text: weatherTexts[85], icon: "🌨️" },
+                86: { text: weatherTexts[86], icon: "❄️" },
+                95: { text: weatherTexts[95], icon: "⛈️" },
+                96: { text: weatherTexts[96], icon: "⛈️" },
+                99: { text: weatherTexts[99], icon: "⛈️" }
+            };
+            const info = codes[code] || { text: weatherTexts.def, icon: "🌡️" };
+            if (!isDay && NIGHT_ICONS[code]) {
+                return { text: info.text, icon: NIGHT_ICONS[code] };
+            }
+            return info;
+        }
+
+        // --- Fasce di riferimento Qualità Aria (AQI europeo) e Indice UV ---
+        // Soglie standard: https://www.airqualitynow.eu (AQI) e scala UV dell'OMS.
+        function getAqiInfo(aqi) {
+            const t = i18n[currentLang].aqiLevels;
+            if (aqi <= 20) return { label: t.good, colorClass: 'text-green-400' };
+            if (aqi <= 40) return { label: t.fair, colorClass: 'text-lime-400' };
+            if (aqi <= 60) return { label: t.moderate, colorClass: 'text-yellow-400' };
+            if (aqi <= 80) return { label: t.poor, colorClass: 'text-orange-400' };
+            if (aqi <= 100) return { label: t.veryPoor, colorClass: 'text-red-400' };
+            return { label: t.extreme, colorClass: 'text-purple-400' };
+        }
+
+        function getUvInfo(uv) {
+            const t = i18n[currentLang].uvLevels;
+            if (uv <= 2) return { label: t.low, colorClass: 'text-green-400' };
+            if (uv <= 5) return { label: t.moderate, colorClass: 'text-yellow-400' };
+            if (uv <= 7) return { label: t.high, colorClass: 'text-orange-400' };
+            if (uv <= 10) return { label: t.veryHigh, colorClass: 'text-red-400' };
+            return { label: t.extreme, colorClass: 'text-purple-400' };
+        }
+
+        // Reverse geocoding "best effort": traduce lat/lon in un nome di città leggibile
+        // usando un servizio pubblico senza chiave API. In caso di errore/rete assente
+        // ritorna null e l'app resta con l'etichetta generica "La tua posizione", senza bloccarsi.
+        async function reverseGeocodeCityName(lat, lon) {
+            try {
+                const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=${currentLang}`);
+                if (!response.ok) return null;
+                const data = await response.json();
+                const place = data.city || data.locality || data.principalSubdivision;
+                if (!place) return null;
+                return data.countryName ? `${place}, ${data.countryName}` : place;
+            } catch (e) {
+                console.warn("Reverse geocoding non riuscito", e);
+                return null;
+            }
+        }
+
+        function initLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        const fallbackName = i18n[currentLang].yourLocation;
+                        fetchWeatherData(lat, lon, fallbackName);
+                        // Aggiorna il nome città in un secondo momento, senza rifare la fetch meteo:
+                        // se nel frattempo l'utente ha già cercato un'altra città, non sovrascrive.
+                        reverseGeocodeCityName(lat, lon).then(resolvedName => {
+                            if (resolvedName && currentCityName === fallbackName) {
+                                currentCityName = resolvedName;
+                                document.getElementById('cityName').textContent = resolvedName;
+                            }
+                        });
+                    },
+                    () => {
+                        fetchWeatherData(41.9028, 12.4964, "Roma");
+                    }
+                );
+            } else {
+                fetchWeatherData(41.9028, 12.4964, "Roma");
+            }
+        }
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const query = document.getElementById('cityInput').value.trim();
+            if (query) {
+                document.getElementById('suggestions').classList.add('hidden');
+                searchCity(query);
+            }
+        });
+
+        const cityInput = document.getElementById('cityInput');
+        // Debounce: senza attesa, ogni singolo carattere digitato scatenava una chiamata
+        // di rete all'API di geocoding, sovraccaricandola inutilmente e generando risposte
+        // fuori ordine. 350ms è un compromesso tra reattività percepita e numero di richieste.
+        let autocompleteDebounceTimer = null;
+        cityInput.addEventListener('input', (e) => {
+            const value = e.target.value.trim();
+            clearTimeout(autocompleteDebounceTimer);
+            autocompleteDebounceTimer = setTimeout(() => searchCityAutocomplete(value), 350);
+        });
+        cityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = cityInput.value.trim();
+                if (query) {
+                    document.getElementById('suggestions').classList.add('hidden');
+                    searchCity(query);
+                }
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!cityInput.contains(e.target) && !document.getElementById('suggestions').contains(e.target)) {
+                document.getElementById('suggestions').classList.add('hidden');
+            }
+        });
+
+        document.getElementById('geoBtn').addEventListener('click', initLocation);
+        
+        document.getElementById('unitBtn').addEventListener('click', () => {
+            isCelsius = !isCelsius;
+            document.getElementById('unitBtn').textContent = isCelsius ? '°C' : '°F';
+            updateUI();
+        });
+
+        document.getElementById('langBtn').addEventListener('click', () => {
+            currentLang = currentLang === 'it' ? 'en' : 'it';
+            isCelsius = (currentLang === 'it');
+            document.getElementById('unitBtn').textContent = isCelsius ? '°C' : '°F';
+            
+            applyTranslations();
+            renderFavorites();
+            
+            if (currentWeatherData) {
+                updateUI();
+            } else {
+                document.getElementById('cityCoords').textContent = i18n[currentLang].detecting;
+            }
+        });
+
+        // --- Toast non bloccante ---
+        // Sostituisce alert(): mostra un messaggio temporaneo in basso, con auto-dismiss.
+        let toastTimer = null;
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message;
+            const borderClass = type === 'error' ? 'border-rose-500/70' : 'border-cyan-500/70';
+            // Parte da opacity-0 (visibile ma trasparente), poi un reflow forzato prima di rimuovere
+            // opacity-0 fa partire la dissolvenza in entrata.
+            toast.className = `opacity-0 fixed bottom-4 left-1/2 -translate-x-1/2 z-[2000] max-w-[90vw] text-center bg-slate-800 border ${borderClass} text-slate-100 text-sm px-4 py-2.5 rounded-lg shadow-xl transition-opacity duration-300`;
+            void toast.offsetWidth;
+            toast.classList.remove('opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3500);
+        }
+
+        // --- Hint installazione iOS ---
+        const IOS_HINT_DISMISSED_KEY = 'ios_hint_dismissed_v1';
+        (function setupIosInstallHint() {
+            const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+            const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+            const alreadyDismissed = safeLocalGet(IOS_HINT_DISMISSED_KEY) === '1';
+            if (!isIos || isStandalone || alreadyDismissed) return;
+
+            const hint = document.getElementById('iosInstallHint');
+            document.getElementById('iosInstallHintText').textContent = i18n[currentLang].iosInstallHint;
+            hint.classList.remove('hidden');
+            document.getElementById('iosInstallHintClose').addEventListener('click', () => {
+                hint.classList.add('hidden');
+                safeLocalSet(IOS_HINT_DISMISSED_KEY, '1');
+            });
+        })();
+    </script>
+</body>
+</html>
