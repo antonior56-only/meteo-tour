@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'meteo-shell-v15-20260912';
+const CACHE_NAME = 'meteo-shell-v16-20260912';
 const SHELL = ['./','./index.html','./manifest.json','./base.css','./app.css','./translations.js','./core.js','./app.js','./vendor/chart.umd.js','./icon-192.png','./icon-512.png'];
 const SHELL_URLS = new Set(SHELL.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>{
