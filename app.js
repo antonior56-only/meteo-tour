@@ -126,14 +126,29 @@ function renderForecast(){
     button.addEventListener('click',()=>openDay(i,button));container.appendChild(button);
   });
 }
-function destroyChart(id){try{charts[id]?.destroy();}catch{}delete charts[id];}
+function destroyChart(id){try{charts[id]?.destroy();}catch{}delete charts[id];const cv=$(id);cv?.parentElement?.querySelector('.chart-fallback')?.remove();cv?.classList.remove('hidden');}
+function drawFallbackChart(cv,labels,values,label,color,kind,bounds){
+  const width=Math.max(280,cv.parentElement.clientWidth||600),height=Math.max(120,cv.parentElement.clientHeight||180),left=42,right=10,top=10,bottom=28,plotW=width-left-right,plotH=height-top-bottom;
+  const numeric=values.map((value,index)=>C.finite(value)?{value,index}:null).filter(Boolean),range=C.range(values);
+  const fallback=document.createElement('div');fallback.className='chart-fallback';fallback.setAttribute('role','img');fallback.setAttribute('aria-label',cv.getAttribute('aria-label')||label);cv.classList.add('hidden');cv.parentElement.appendChild(fallback);
+  if(!range){fallback.innerHTML=`<svg viewBox="0 0 ${width} ${height}" aria-hidden="true"><text x="${width/2}" y="${height/2}" text-anchor="middle" fill="#cbd5e1" font-size="14">${escapeHTML(L('Nessun dato','No data'))}</text></svg>`;return;}
+  let min=C.finite(bounds.min)?bounds.min:(bounds.beginAtZero?0:range[0]),max=C.finite(bounds.max)?bounds.max:range[1];if(min===max){min-=1;max+=1;}else if(!C.finite(bounds.min)&&!bounds.beginAtZero){const pad=(max-min)*.12;min-=pad;max+=pad;}
+  const x=index=>left+(values.length<2?plotW/2:index*plotW/(values.length-1)),y=value=>top+(max-value)*plotH/(max-min);
+  const grid=Array.from({length:5},(_,i)=>{const value=max-(max-min)*i/4,py=top+plotH*i/4;return `<line x1="${left}" y1="${py}" x2="${width-right}" y2="${py}" stroke="#475569" stroke-width="1"/><text x="${left-6}" y="${py+4}" text-anchor="end" fill="#cbd5e1" font-size="11">${escapeHTML(n(value,0))}</text>`;}).join('');
+  const tickCount=Math.min(6,labels.length),tickIndexes=[...new Set(Array.from({length:tickCount},(_,i)=>Math.round(i*(labels.length-1)/Math.max(1,tickCount-1))))];
+  const ticks=tickIndexes.map(index=>`<text x="${x(index)}" y="${height-7}" text-anchor="middle" fill="#cbd5e1" font-size="11">${escapeHTML(labels[index]||'')}</text>`).join('');
+  let marks='';
+  if(kind==='bar'){const barWidth=Math.max(2,plotW/Math.max(1,values.length)*.65);marks=numeric.map(({value,index})=>`<rect x="${x(index)-barWidth/2}" y="${y(value)}" width="${barWidth}" height="${Math.max(0,top+plotH-y(value))}" rx="2" fill="${color}" opacity=".85"/>`).join('');}
+  else{const points=numeric.map(({value,index})=>`${x(index)},${y(value)}`).join(' ');marks=`<polyline points="${points}" fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`+numeric.map(({value,index})=>`<circle cx="${x(index)}" cy="${y(value)}" r="2.7" fill="${color}"/>`).join('');}
+  fallback.innerHTML=`<svg viewBox="0 0 ${width} ${height}" aria-hidden="true">${grid}${marks}${ticks}</svg>`;
+}
 function drawChart(id,labels,values,label,color,kind='line',bounds={}){
   destroyChart(id);const cv=$(id),valid=C.numeric(values),r=C.range(values);
   cv.setAttribute('role','img');cv.setAttribute('aria-label',`${label}: ${r?`${n(r[0],1)} – ${n(r[1],1)}`:L('nessun dato','no data')}. ${valid.length}/${values.length} ${L('valori disponibili','values available')}.`);
-  if(typeof Chart!=='function'){text('chartNotice',L('Grafici non disponibili. I dati e i dettagli restano consultabili.','Charts unavailable. Data and details remain available.'));$('chartNotice').classList.remove('hidden');return;}
+  if(typeof Chart!=='function'){drawFallbackChart(cv,labels,values,label,color,kind,bounds);return;}
   try{
-    charts[id]=new Chart(cv.getContext('2d'),{type:kind,data:{labels,datasets:[{label,data:values.map(v=>C.finite(v)?v:null),borderColor:color,backgroundColor:color+'30',borderWidth:2,fill:kind==='line',tension:0,pointRadius:0,spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{...bounds,grid:{color:'#334155'},ticks:{color:'#b8c5d7',font:{size:11}}},x:{grid:{display:false},ticks:{color:'#b8c5d7',maxTicksLimit:6,font:{size:11}}}},plugins:{legend:{display:false}}}});
-  }catch(e){console.warn('Chart unavailable',e);text('chartNotice',L('Grafico non disponibile','Chart unavailable'));$('chartNotice').classList.remove('hidden');}
+    charts[id]=new Chart(cv.getContext('2d'),{type:kind,data:{labels,datasets:[{label,data:values.map(v=>C.finite(v)?v:null),borderColor:color,backgroundColor:color+'30',borderWidth:3,fill:kind==='line',tension:0,pointRadius:2,pointHoverRadius:4,spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{...bounds,grid:{color:'#475569'},ticks:{color:'#cbd5e1',font:{size:11}}},x:{grid:{display:false},ticks:{color:'#cbd5e1',maxTicksLimit:6,font:{size:11}}}},plugins:{legend:{display:false}}}});
+  }catch(e){console.warn('Chart unavailable',e);drawFallbackChart(cv,labels,values,label,color,kind,bounds);}
 }
 function renderCharts(){
   ['hourlyChartTemp','hourlyChartHumidity','hourlyChartRain'].forEach(destroyChart);
@@ -144,8 +159,8 @@ function renderCharts(){
   const hours=h.time.slice(start,start+24),labels=hours.map(C.localClock);
   const vals=key=>hours.map((_,i)=>h[key]?.[start+i]);
   if(activeChart==='tempHumidity'){
-    drawChart('hourlyChartTemp',labels,vals('temperature_2m').map(v=>C.toTemp(v,celsius)),`${t().temperature} ${celsius?'°C':'°F'}`,'#3987e5');
-    drawChart('hourlyChartHumidity',labels,vals('relative_humidity_2m'),`${t().humidity} %`,'#d95926','line',{min:0,max:100});
+    drawChart('hourlyChartTemp',labels,vals('temperature_2m').map(v=>C.toTemp(v,celsius)),`${t().temperature} ${celsius?'°C':'°F'}`,'#38bdf8');
+    drawChart('hourlyChartHumidity',labels,vals('relative_humidity_2m'),`${t().humidity} %`,'#fb923c','line',{min:0,max:100});
   }else{
     drawChart('hourlyChartRain',labels,vals('precipitation'),L('Precipitazioni mm','Precipitation mm'),'#818cf8','bar',{beginAtZero:true});
     if(charts.hourlyChartRain){charts.hourlyChartRain.options.plugins.tooltip={callbacks:{afterLabel:ctx=>{const p=h.precipitation_probability?.[start+ctx.dataIndex];return C.finite(p)?`${L('Probabilità','Probability')}: ${n(p)}%`:'';}}};charts.hourlyChartRain.update();}
@@ -329,10 +344,10 @@ function setup(){
   if(ios&&!window.matchMedia('(display-mode: standalone)').matches&&!navigator.standalone&&!read('ios_hint_dismissed_v1'))$('iosInstallHint').classList.remove('hidden');
   $('iosInstallHintClose').addEventListener('click',()=>{$('iosInstallHint').classList.add('hidden');write('ios_hint_dismissed_v1',true);});
   if('serviceWorker'in navigator&&location.protocol!=='file:'){
-    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(updatingApp)location.reload();});
-    navigator.serviceWorker.register('./service-worker.js').then(reg=>{
+    let controllerRefreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(controllerRefreshing)return;controllerRefreshing=true;location.reload();});
+    navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).then(reg=>{
       function ready(){if(reg.waiting){updateWorker=reg.waiting;text('refreshBtn',L('Nuova versione · Ricarica','New version · Reload'));showToast(L('Nuova versione disponibile: premi Ricarica.','New version available: press Reload.'));}}
-      ready();reg.addEventListener('updatefound',()=>{reg.installing?.addEventListener('statechange',ready);});
+      ready();reg.update().catch(()=>{});reg.addEventListener('updatefound',()=>{reg.installing?.addEventListener('statechange',ready);});
     }).catch(e=>{console.warn('Service worker',e);showToast(L('La modalità offline non è stata attivata.','Offline mode could not be enabled.'),'error');});
   }
   applyTranslations();write(STORE.favorites,favorites);

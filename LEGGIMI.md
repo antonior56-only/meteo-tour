@@ -6,7 +6,7 @@ Pubblica **tutto il contenuto di questa cartella**, comprese `vendor/`, `app.js`
 
 La PWA e la geolocalizzazione richiedono HTTPS o localhost. Il doppio clic su `index.html` permette solo una consultazione limitata: l’installazione e il service worker non sono disponibili con `file://`.
 
-Quando una nuova versione è pronta, il pulsante mostra **Nuova versione · Ricarica**. Il consenso alla ricarica attiva la nuova versione completa. Se il vecchio sito continua a comparire, chiudi tutte le sue finestre e riaprilo.
+A ogni apertura con Internet, l'app controlla i file pubblicati e aggiorna automaticamente la copia salvata. Per gli aggiornamenti ordinari di HTML, CSS, JavaScript, traduzioni e immagini non è necessario modificare `CACHE_NAME`. Se manca Internet viene usata l'ultima copia salvata. Dopo l'installazione di questo meccanismo, chiudi l'app dall'elenco delle applicazioni recenti e riaprila una volta.
 
 ## Comportamento
 

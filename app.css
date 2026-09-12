@@ -48,6 +48,9 @@ summary { cursor: pointer; color: #cbd5e1; font-size: .875rem; padding: .5rem 0;
 #loadingSpinner { width: 1rem; height: 1rem; border-width: 2px; }
 #loadingSpinner.hidden { display: none !important; animation: none !important; }
 #dayDetailChart { width: 100%; }
+.weather-chart-panel { height: 9rem; }
+.chart-fallback { width: 100%; height: 100%; }
+.chart-fallback svg { width: 100%; height: 100%; overflow: visible; }
 #dayDetailPanel .h-40 { height: 12rem; }
 #dayDetailPanel .mb-4 { margin-bottom: 1rem; }
 #dayDetailClose { font-size: 1.5rem; }
@@ -68,6 +71,6 @@ summary { cursor: pointer; color: #cbd5e1; font-size: .875rem; padding: .5rem 0;
 .forecast-temp { font-size: .85rem; font-weight: 600; }
 .forecast-rain { font-size: .75rem; color: #7dd3fc; margin-top: .3rem; }
 .empty-state { color: #cbd5e1; font-size: .875rem; padding: 1rem 0; }
-@media(min-width:640px) { #dayDetailMetrics { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(min-width:640px) { #dayDetailMetrics { grid-template-columns: repeat(3,minmax(0,1fr)); } .weather-chart-panel { height: 10rem; } }
 @media(min-width:1024px) { #mainContent > .extension-card:not(.official-card) { grid-column: span 1; } #mainContent > .extension-card[aria-labelledby="marineTitle"] { grid-column: span 2; } }
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
