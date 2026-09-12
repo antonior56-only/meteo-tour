@@ -1,0 +1,73 @@
+:root { color-scheme: dark; }
+body { padding-bottom: env(safe-area-inset-bottom); }
+button, a, summary { touch-action: manipulation; }
+button { cursor: pointer; min-height: 2.5rem; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, a:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid #67e8f9; outline-offset: 3px; }
+main > section { min-width: 0; }
+.status-bar { max-width: 80rem; margin: .9rem auto 0; padding: 0 .9rem; display: flex; gap: 1rem; align-items: center; justify-content: space-between; font-size: .875rem; }
+.status-bar[data-state="stale"], .status-bar[data-state="offline"], .status-bar[data-state="error"] { color: #fcd34d; }
+.action-button { padding: .5rem .8rem; background: #164e63; color: #cffafe; border: 1px solid #0e7490; border-radius: .5rem; font-size: .875rem; }
+.action-button:hover { background: #155e75; }
+.extension-card { background: #1e293b; border: 1px solid #334155; border-radius: 1rem; padding: 1.25rem; min-width: 0; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
+.section-heading h2 { color: #67e8f9; font-size: 1.1rem; font-weight: 600; }
+.badge { color: #cbd5e1; background: #0f172a; padding: .2rem .6rem; border-radius: 2rem; font-size: .75rem; }
+.metric-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; margin: .75rem 0; }
+.metric { background: #0f172a99; border: 1px solid #334155; border-radius: .7rem; padding: .7rem; text-align: center; overflow-wrap: anywhere; }
+.metric-label { display: block; color: #94a3b8; font-size: .8rem; }
+.metric-value { display: block; font-size: 1rem; font-weight: 600; color: #e2e8f0; margin-top: .2rem; }
+.subtle, .source { color: #a6b3c5; font-size: .8rem; line-height: 1.5; margin-top: .5rem; overflow-wrap: anywhere; }
+.source a, .text-link { text-decoration: underline; text-underline-offset: 3px; color: #7dd3fc; }
+.source { margin-top: 1rem; }
+summary { cursor: pointer; color: #cbd5e1; font-size: .875rem; padding: .5rem 0; }
+.official-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 1rem; font-size: .875rem; }
+.official-actions .action-button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.5rem; font-family: inherit; line-height: 1.25; text-decoration: none; }
+.official-card { grid-column: 1 / -1; }
+#officialViewer { margin-top: 1rem; }
+#officialFrame { width: 100%; height: min(75vh,680px); min-height: 340px; border: 1px solid #475569; border-radius: .75rem; margin-top: .75rem; background: white; }
+.radar-forecast { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #334155; }
+.radar-forecast-heading { margin-bottom: .25rem; }
+.radar-forecast-heading h3 { color: #e2e8f0; font-size: .95rem; font-weight: 600; }
+.radar-range-controls { display: flex; flex-wrap: wrap; gap: .4rem; }
+.radar-range-controls .action-button { min-height: 2.25rem; padding: .35rem .65rem; }
+.radar-range-controls .action-button[aria-pressed="true"] { background: #0891b2; border-color: #22d3ee; color: #fff; }
+.radar-hours { display: flex; overflow-x: auto; gap: .5rem; padding: .65rem .1rem .35rem; scroll-snap-type: x proximity; scrollbar-color: #475569 #0f172a; }
+.radar-hour { flex: 0 0 6.25rem; min-height: 7.3rem; padding: .65rem .45rem; background: #0f172a99; border: 1px solid #334155; border-radius: .7rem; text-align: center; scroll-snap-align: start; }
+.radar-hour span { display: block; }
+.radar-hour-time { min-height: 2.2rem; color: #cbd5e1; font-size: .72rem; line-height: 1.35; }
+.radar-hour-icon { margin: .15rem 0; font-size: 1.35rem; }
+.radar-hour-rain { color: #7dd3fc; font-size: .82rem; font-weight: 600; }
+.radar-hour-probability { margin-top: .15rem; color: #a6b3c5; font-size: .72rem; }
+.marine-hours { display: flex; overflow-x: auto; gap: .5rem; }
+.marine-hours .metric { min-width: 6rem; }
+#toast { position: fixed; bottom: max(1rem,env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 3000; max-width: min(90vw,40rem); opacity: 1; transition: opacity .2s; }
+#toast.opacity-0 { opacity: 0; }
+#toast[data-type="error"] { border-color: #fb7185; }
+#toast[data-type="info"] { border-color: #22d3ee; }
+#loadingSpinner { width: 1rem; height: 1rem; border-width: 2px; }
+#loadingSpinner.hidden { display: none !important; animation: none !important; }
+#dayDetailChart { width: 100%; }
+#dayDetailPanel .h-40 { height: 12rem; }
+#dayDetailPanel .mb-4 { margin-bottom: 1rem; }
+#dayDetailClose { font-size: 1.5rem; }
+#dayDetailIcon { font-size: 2.25rem; }
+#suggestions [aria-selected="true"] { background: #155e75; }
+#suggestions [role="option"] { padding: .65rem .75rem; font-size: .875rem; cursor: pointer; }
+#suggestions [role="option"]:hover { background: #334155; }
+#iosInstallHint { margin-top: .75rem; }
+#iosInstallHintText { color: #e2e8f0; }
+#cityName { white-space: normal; overflow-wrap: anywhere; }
+[class~="text-[10px]"] { font-size: .75rem; }
+.text-slate-600 { color: #94a3b8; }
+.forecast-card { min-width: 0; padding: .75rem .4rem; background: #0f172a99; border: 1px solid #334155; border-radius: .75rem; text-align: center; }
+.forecast-card:hover { border-color: #06b6d4; }
+.forecast-card span { display: block; }
+.forecast-date { color: #cbd5e1; font-size: .8rem; }
+.forecast-icon { font-size: 1.7rem; margin: .25rem 0; }
+.forecast-temp { font-size: .85rem; font-weight: 600; }
+.forecast-rain { font-size: .75rem; color: #7dd3fc; margin-top: .3rem; }
+.empty-state { color: #cbd5e1; font-size: .875rem; padding: 1rem 0; }
+@media(min-width:640px) { #dayDetailMetrics { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(min-width:1024px) { #mainContent > .extension-card:not(.official-card) { grid-column: span 1; } #mainContent > .extension-card[aria-labelledby="marineTitle"] { grid-column: span 2; } }
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
